@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "title": "Spread Operator",
+      "body": "Lo spread operator permette di eseguire l'espansione di una espressione nei punti in cui argomenti multipli (per eseguire una chiamata di funzione) o multipli elementi (per array literal) sono attesi."
+    },
+    {
+      "id": 2,
+      "title": "Map Object",
+      "body": "The Map object is a simple key/value map. Any value (both objects and primitive values) may be used as either a key or a value."
+    },
+    {
+      "id": 3,
+      "title": "Break Statement",
+      "body": "The break statement terminates the current loop, switch, or label statement and transfers program control to the statement following the terminated statement."
+    },
+    {
+      "id": 4,
+      "title": "Arrow Function",
+      "body": "An arrow function expression has a shorter syntax than a function expression and does not have its own this, arguments, super, or new.target. These function expressions are best suited for non-method functions, and they cannot be used as constructors."
+    },
+    {
+      "id": 5,
+      "title": "Try... Catch!",
+      "body": "The try...catch statement marks a block of statements to try, and specifies a response, should an exception be thrown."
+    }
+]

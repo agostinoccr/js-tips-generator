@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/button.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <!-- <script src="main.js"></script> -->
+</head>
+<body>
+
+    <h1>Js Tips Generator</h1>
+
+    <div id="tip">
+        <h3 id="title">
+
+        </h3>
+
+        <p id="body">
+
+        </p>
+    </div>
+
+    <div class="svg-wrapper">
+    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+        <rect id="shape" height="40" width="150" />
+        <div id="text">
+        <a href=""><span class="spot"></span>Get Tip!</a>
+        </div>
+    </svg>
+    </div>
+
+
+    <script type="text/javascript">
+
+    function getData(){
+
+        const xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState == 4) {
+
+                if(xhr.status == 200) {
+
+                    var tips = JSON.parse(xhr.response);
+                    var randTip = tips[Math.floor(Math.random()*tips.length)];
+
+                    console.log('Random: ' + randTip)
+
+                    document.getElementById('title').textContent = randTip.title;
+                    document.getElementById('body').textContent = randTip.body;
+                }
+
+                if(xhr.status == 404) {
+                    console.log('File not found!');
+                }
+
+            }
+        };
+
+        xhr.open('get', 'json/tips.json', true);
+        xhr.send();
+
+    }
+
+    document.getElementsByTagName('a')[0].addEventListener('click', function(){
+        event.preventDefault();
+        getData();
+    });
+
+    </script>
+    
+</body>
+</html>
