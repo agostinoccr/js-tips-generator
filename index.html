@@ -120,7 +120,7 @@
 
     function createRegEx(keywords) {
         let regex = keywords.join('|');
-        return new RegExp(`${regex}\\gi`);
+        return new RegExp(`${regex}`,'gi');
     }
 
     </script>
