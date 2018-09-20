@@ -10,7 +10,7 @@
   margin-top: 0;
   position: relative;
   width: 300px;
-  /*make sure to use same height/width as in the html*/
+  /* same height/width as in the html! */
   height: 80px;
   display: inline-block;
   border-radius: 3px;
