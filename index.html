@@ -30,13 +30,13 @@
                             <div class="titlebar">
                                 <div class="buttons">
                                 <div class="close">
-                                    <a class="closebutton" href="#"><span><strong>x</strong></span></a>
+                                    <a class="closebutton" href="#"><span class="iconWindow"><strong>x</strong></span></a>
                                 </div>
                                 <div class="minimize">
-                                    <a class="minimizebutton" href="#"><span><strong>&ndash;</strong></span></a>
+                                    <a class="minimizebutton" href="#"><span class="iconWindow"><strong>&ndash;</strong></span></a>
                                 </div>
                                 <div class="zoom">
-                                    <a class="zoombutton" href="#"><span><strong>+</strong></span></a>
+                                    <a class="zoombutton" href="#"><span class="iconWindow"><strong>+</strong></span></a>
                                 </div>
                                 </div>
                                 Ready to get some JS tips??
@@ -57,7 +57,7 @@
                             <rect id="shape" height="80" width="300" />
                             <div id="text">
                                 <a href="" id="getTip">
-                                    <span class="spot">
+                                    <span class="spot iconWindow">
                                         
                                     </span>
                                     Get Tip!
@@ -70,7 +70,7 @@
 
     <script type="text/javascript">
 
-    const keywords = ['function','var', 'const', 'new'];
+    const keywords = ['function','var', 'let', 'const', 'new', 'while', 'for', 'if', 'else', 'elseif'];
 
     const keywordsRegex = createRegEx(keywords);
 
@@ -88,14 +88,10 @@
                     var tips = JSON.parse(xhr.response);
                     var randTip = tips[Math.floor(Math.random()*tips.length)];
 
-                 var titles = Array.from(document.querySelectorAll('.title'))
-                    .map((titolo) => titolo.textContent = randTip.title);
+                    var titles = Array.from(document.querySelectorAll('.title'))
+                        .map((titolo) => titolo.textContent = randTip.title);
 
-                /*   var titles = document.querySelectorAll('.title');
-                    titles.forEach((titolo) => {
-                        return titolo.textContent = randTip.title
-                    }); */
-                    const innerHtml = randTip.code.replace(keywordsRegex, `<span class="keyword">$&</span>`);
+                    const innerHtml = randTip.code.replace(keywordsRegex, `<span class="$&">$&</span>`).replace(/\n/g, "<br />");
 
                     document.getElementById('body').textContent = randTip.body;
                     document.getElementById('code').innerHTML = innerHtml;

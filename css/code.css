@@ -2,7 +2,7 @@ a {
     text-decoration: none;
   }
   
-  span {
+  .iconWindow {
     line-height: 9px;
     vertical-align: 50%;
   }
@@ -140,4 +140,10 @@ a {
     color: #fff
   }
   
-  /* window END */
+  .var, .let, .const, .function {
+    color: #006eff;
+}
+
+.while, .for, .if, .else, .elseif {
+  color: rgb(182, 0, 136)
+}
