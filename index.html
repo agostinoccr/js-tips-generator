@@ -70,6 +70,12 @@
 
     <script type="text/javascript">
 
+    const keywords = ['function','var', 'const', 'new'];
+
+    const keywordsRegex = createRegEx(keywords);
+
+    console.log(keywordsRegex);
+
     function getData(){
 
         const xhr = new XMLHttpRequest();
@@ -89,9 +95,10 @@
                     titles.forEach((titolo) => {
                         return titolo.textContent = randTip.title
                     }); */
+                    const innerHtml = randTip.code.replace(keywordsRegex, `<span class="keyword">$&</span>`);
 
                     document.getElementById('body').textContent = randTip.body;
-                    document.getElementById('code').innerText = randTip.code;
+                    document.getElementById('code').innerHTML = innerHtml;
                 }
 
                 if(xhr.status == 404) {
@@ -110,6 +117,11 @@
         event.preventDefault();
         getData();
     });
+
+    function createRegEx(keywords) {
+        let regex = keywords.join('|');
+        return new RegExp(`${regex}\\gi`);
+    }
 
     </script>
     

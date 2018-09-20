@@ -29,3 +29,7 @@ body {
 #tip {
     margin-top: 60px;
 }
+
+.keyword {
+    color: red;
+}
