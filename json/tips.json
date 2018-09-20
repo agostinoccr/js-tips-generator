@@ -2,26 +2,31 @@
     {
       "id": 1,
       "title": "Spread Operator",
-      "body": "Lo spread operator permette di eseguire l'espansione di una espressione nei punti in cui argomenti multipli (per eseguire una chiamata di funzione) o multipli elementi (per array literal) sono attesi."
+      "body": "Spread syntax allows an iterable such as an array expression or string to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected, or an object expression to be expanded in places where zero or more key-value pairs (for object literals) are expected.",
+      "code": "function sum(x, y, z) { \n return x + y + z;\n}\n\nconst numbers = [1, 2, 3];\nconsole.log(sum(...numbers));\n// expected output: 6\n\nconsole.log(sum.apply(null, numbers));\n// expected output: 6\n"
     },
     {
       "id": 2,
       "title": "Map Object",
-      "body": "The Map object is a simple key/value map. Any value (both objects and primitive values) may be used as either a key or a value."
+      "body": "The Map object is a simple key/value map. Any value (both objects and primitive values) may be used as either a key or a value.",
+      "code": "new Map([iterable])\n"
     },
     {
       "id": 3,
       "title": "Break Statement",
-      "body": "The break statement terminates the current loop, switch, or label statement and transfers program control to the statement following the terminated statement."
+      "body": "The break statement terminates the current loop, switch, or label statement and transfers program control to the statement following the terminated statement.",
+      "code": "var i = 0;\n\nwhile (i < 6) {\nif (i === 3) {\nbreak;\n}\ni = i + 1;\n}\n\nconsole.log(i);\n// expected output: 3\n"
     },
     {
       "id": 4,
       "title": "Arrow Function",
-      "body": "An arrow function expression has a shorter syntax than a function expression and does not have its own this, arguments, super, or new.target. These function expressions are best suited for non-method functions, and they cannot be used as constructors."
+      "body": "An arrow function expression has a shorter syntax than a function expression and does not have its own this, arguments, super, or new.target. These function expressions are best suited for non-method functions, and they cannot be used as constructors.",
+      "code": "var materials = [\n'Hydrogen',\n'Helium',\n'Lithium',\n'Beryllium'\n];\n\nconsole.log(materials.map(material => material.length));\n// expected output: Array [8, 6, 7, 9]\n"
     },
     {
       "id": 5,
       "title": "Try... Catch!",
-      "body": "The try...catch statement marks a block of statements to try, and specifies a response, should an exception be thrown."
-    }
+      "body": "The try...catch statement marks a block of statements to try, and specifies a response, should an exception be thrown.\nExample: missing double quotes",
+      "code": "try {\neval('alert(\"Hello world)');\n}\ncatch(error) {\nconsole.error(error);\n}\n\n// expected output: SyntaxError: unterminated string literal\n// Note - error messages will vary depending on browser\n"
+      }
 ]
