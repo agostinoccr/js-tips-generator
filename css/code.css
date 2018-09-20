@@ -144,10 +144,14 @@ a {
     color: #006eff;
 }
 
-.while, .for, .if, .else, .elseif, .try, .catch, .break {
+.while, .for, .if, .else, .elseif, .try, .catch, .break, .return {
   color: rgb(182, 0, 136)
 }
 
 .log {
   color: #eeff00
+}
+
+.console {
+  color: #00ccff
 }
