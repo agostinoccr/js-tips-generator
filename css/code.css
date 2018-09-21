@@ -8,7 +8,6 @@ a {
   }
   
   .window {
-    /* background: #fff; */
     background-color: #002a46;
     width: 50vw;
     height: auto;
@@ -139,6 +138,12 @@ a {
     padding: 10px;
     color: #fff
   }
+
+  @media only screen and (max-width: 768px) {
+    .windowTitle {
+      display: none
+    }
+}
 
   @media only screen and (max-width: 425px) {
     .window {
