@@ -42,7 +42,7 @@
                             <div class="content">
                                 <h3 class="title"></h3>
                                 <p id="code">
-                                    Click the <em>'Get Tip'</em> button &#9917;
+                                    <!-- Click the <em>'Get Tip'</em> button &#9917; -->
                                 </p>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                     <ul id="notes">
                         <li>
                             <p id="body">
-                                Waiting for you to click...
+                                <!-- Waiting for you to click... -->
                             </p>
                         </li>
                     </ul>
@@ -128,6 +128,8 @@
         let regex = keywords.join('|');
         return new RegExp(`(?:${regex})(?!\\w)`,'gi');
     }
+
+    window.onload = getData();
 
     </script>
     
