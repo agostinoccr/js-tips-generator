@@ -139,9 +139,17 @@ a {
     padding: 10px;
     color: #fff
   }
+
+  @media only screen and (max-width: 425px) {
+    .window {
+      width: 73vw;
+    }
+}
+
+  /* KEYWORDS */
   
-  .var, .let, .const, .function {
-    color: #006eff;
+  .var, .let, .const, .function, .new {
+    color: #0974ff;
 }
 
 .while, .for, .if, .else, .elseif, .try, .catch, .break, .return {
@@ -155,3 +163,5 @@ a {
 .console {
   color: #00ccff
 }
+
+
