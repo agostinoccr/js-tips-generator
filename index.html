@@ -9,22 +9,20 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/button.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/code.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/note.css" />
+
 
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie&amp;subset=latin' rel='stylesheet' type='text/css'>
 
 </head>
 <body class="bg-yellow">
 
                     <h1>Js Tips Generator</h1>
 
+                    <div class="container">
+                    
                     <div id="tip">
-                        <h2 class="title">
-                
-                        </h2>
-                
-                        <p id="body">
-                
-                        </p>
                 
                         <div class="window">
                             <div class="titlebar">
@@ -44,12 +42,24 @@
                             <div class="content">
                                 <h3 class="title"></h3>
                                 <p id="code">
-                
+                                    Click the <em>'Get Tip'</em> button &#9917;
                                 </p>
                             </div>
                         </div>
                 
                     </div>
+
+                    <!-- NOTE -->
+
+                    <ul id="notes">
+                        <li>
+                            <p id="body">
+                    
+                            </p>
+                        </li>
+                    </ul>
+
+                </div>
 
                 <div class="bottomDiv">
                     <div class="svg-wrapper">
@@ -70,7 +80,7 @@
 
     <script type="text/javascript">
 
-    const keywords = ['function' ,'var', 'let', 'const', 'new', 'while', 'for', 'if', 'else', 'elseif', 'try', 'catch', 'break', 'log', 'console', 'return'];
+    const keywords = ['function' ,'var', 'let', 'const', 'new', 'while', 'for', 'if', 'else', 'elseif', 'try', 'catch', 'break', 'log', 'console', 'return', 'map', 'length', 'alert', 'apply', 'eval'];
 
     const keywordsRegex = createRegEx(keywords);
 

@@ -156,7 +156,7 @@ a {
   color: rgb(182, 0, 136)
 }
 
-.log {
+.log, .map, .length, .alert, .apply, .eval {
   color: #eeff00
 }
 
