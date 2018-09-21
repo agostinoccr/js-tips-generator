@@ -101,8 +101,14 @@
                     var titles = Array.from(document.querySelectorAll('.title'))
                         .map((titolo) => titolo.textContent = randTip.title);
 
-                    const innerHtml = randTip.code.replace(keywordsRegex, `<span class="$&">$&</span>`).replace(/\n/g, "<br />");
+                    const innerHtml = randTip.code
+                        .split('\n')
+                        .map( el => el.replace(/(\/\/).*/g, `<span class="comment">$&</span>`).replace(keywordsRegex, `<span class="$&">$&</span>`))
+                        .join("<br />");
 
+                    console.log(innerHtml);
+                        
+                                            
                     document.getElementById('body').textContent = randTip.body;
                     document.getElementById('code').innerHTML = innerHtml;
                 }
