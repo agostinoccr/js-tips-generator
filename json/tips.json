@@ -28,5 +28,35 @@
       "title": "Try... Catch!",
       "body": "The try...catch statement marks a block of statements to try, and specifies a response, should an exception be thrown.\nExample: missing double quotes",
       "code": "try {\neval('alert(\"Hello world)');\n}\ncatch(error) {\nconsole.error(error);\n}\n\n// expected output: SyntaxError: unterminated string literal\n// Note - error messages will vary depending on browser\n"
-      }
+      },
+  {
+    "id": 6,
+    "title": "Array.prototype.filter()",
+    "body": "The filter() method creates a new array with all elements that pass the test implemented by the provided function.",
+    "code": "var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];\n\nconst result = words.filter(word => word.length > 6);\n\nconsole.log(result);\n// expected output: Array [\"exuberant\", \"destruction\", \"present\"]\n"
+    },
+  {
+    "id": 7,
+    "title": "Array.length",
+    "body": "The length property of an object which is an instance of type Array sets or returns the number of elements in that array. The value is an unsigned, 32-bit integer that is always numerically greater than the highest index in the array.",
+    "code": "var clothing = ['shoes', 'shirts', 'socks', 'sweaters'];\n\nconsole.log(clothing.length);\n// expected output: 4\n"
+    },
+  {
+    "id": 8,
+    "title": "Array.from()",
+    "body": "The Array.from() method creates a new, shallow-copied Array instance from an array-like or iterable object.",
+    "code": "console.log(Array.from('foo'));\n// expected output: Array [\"f\", \"o\", \"o\"]\n\nconsole.log(Array.from([1, 2, 3], x => x + x));\n// expected output: Array [2, 4, 6]\n"
+    },
+  {
+    "id": 9,
+    "title": "Array.prototype.every()",
+    "body": "The every() method tests whether all elements in the array pass the test implemented by the provided function.",
+    "code": "function isBelowThreshold(currentValue) {\nreturn currentValue < 40;\n}\n\nvar array1 = [1, 30, 39, 29, 10, 13];\n\nconsole.log(array1.every(isBelowThreshold));\n// expected output: true\n"
+    },
+  {
+    "id": 10,
+    "title": "Array.prototype.find()",
+    "body": "The find() method returns the value of the first element in the array that satisfies the provided testing function. Otherwise undefined is returned.",
+    "code": "var array1 = [5, 12, 8, 130, 44];\n\nvar found = array1.find(function(element) {\nreturn element > 10;\n});\n\nconsole.log(found);\n// expected output: 12\n"
+    }
 ]
