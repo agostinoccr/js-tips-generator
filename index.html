@@ -82,44 +82,32 @@
 
     <script type="text/javascript">
 
+    let tips = [];
+
+    (async function fetchData() {
+        let response = await fetch('json/tips.json');
+         tips = await response.json();
+        getData();
+    })();
+
     const keywords = ['function' ,'var', 'let', 'const', 'new', 'while', 'for', 'if', 'else', 'elseif', 'try', 'catch', 'break', 'log', 'console', 'return', 'map', 'length', 'alert', 'apply', 'eval', 'fromEntries', 'seal', 'every', 'filter', 'create', 'valueOf', 'this', 'delete', 'prototype', 'from', 'assign', 'false', 'true'];
 
     const keywordsRegex = createRegEx(keywords);
 
     function getData(){
 
-        const xhr = new XMLHttpRequest();
+        var randTip = tips[Math.floor(Math.random()*tips.length)];
 
-        xhr.onreadystatechange = function() {
-            if(xhr.readyState == 4) {
+        var titles = Array.from(document.querySelectorAll('.title'))
+            .map((titolo) => titolo.textContent = randTip.title);
 
-                if(xhr.status == 200) {
-
-                    var tips = JSON.parse(xhr.response);
-                    var randTip = tips[Math.floor(Math.random()*tips.length)];
-
-                    var titles = Array.from(document.querySelectorAll('.title'))
-                        .map((titolo) => titolo.textContent = randTip.title);
-
-                    const innerHtml = randTip.code
-                        .split('\n')
-                        .map( el => el.replace(/(\/\/).*/g, `<span class="comment">$&</span>`).replace(keywordsRegex, `<span class="$&">$&</span>`))
-                        .join("<br />");                        
-                                            
-                    document.getElementById('body').textContent = randTip.body;
-                    document.getElementById('code').innerHTML = innerHtml;
-                }
-
-                if(xhr.status == 404) {
-                    console.log('File not found!');
-                }
-
-            }
-        };
-
-        xhr.open('get', 'json/tips.json', true);
-        xhr.send();
-
+        const innerHtml = randTip.code
+            .split('\n')
+            .map( el => el.replace(/(\/\/).*/g, `<span class="comment">$&</span>`).replace(keywordsRegex, `<span class="$&">$&</span>`))
+            .join("<br />");                        
+                                
+        document.getElementById('body').textContent = randTip.body;
+        document.getElementById('code').innerHTML = innerHtml;
     }
 
     document.getElementById('getTip').addEventListener('click', function(event){
@@ -131,8 +119,6 @@
         let regex = keywords.join('|');
         return new RegExp(`(?:${regex})(?!\\w)`,'gi');
     }
-
-    window.onload = getData();
 
     </script>
     
