@@ -13,7 +13,7 @@
 
 
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie&amp;subset=latin' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie&amp;subset=latin' rel='stylesheet' type='text/css'>
 
 </head>
 <body class="bg-yellow">
@@ -86,8 +86,6 @@
 
     const keywordsRegex = createRegEx(keywords);
 
-    console.log(keywordsRegex);
-
     function getData(){
 
         const xhr = new XMLHttpRequest();
@@ -106,10 +104,7 @@
                     const innerHtml = randTip.code
                         .split('\n')
                         .map( el => el.replace(/(\/\/).*/g, `<span class="comment">$&</span>`).replace(keywordsRegex, `<span class="$&">$&</span>`))
-                        .join("<br />");
-
-                    console.log(innerHtml);
-                        
+                        .join("<br />");                        
                                             
                     document.getElementById('body').textContent = randTip.body;
                     document.getElementById('code').innerHTML = innerHtml;
