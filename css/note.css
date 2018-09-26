@@ -1,13 +1,13 @@
 #notes {
     list-style: none;
-    width: 20%;
+    width: 40%;
     float: left;
     padding: 0;
 }
 
 #notes li {
     position: relative;
-    width: 300px;
+    /* width: 400px; */
     min-height: 100px;
     margin: 25px auto;
     padding: 60px 15px 15px 15px;
@@ -39,7 +39,7 @@
     content: ' ';
     display: block;
     position: absolute;
-    left: 115px;
+    left: 215px;
     top: -15px;
     width: 75px;
     height: 25px;

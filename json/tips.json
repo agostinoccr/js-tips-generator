@@ -58,5 +58,34 @@
     "title": "Array.prototype.find()",
     "body": "The find() method returns the value of the first element in the array that satisfies the provided testing function. Otherwise undefined is returned.",
     "code": "var array1 = [5, 12, 8, 130, 44];\n\nvar found = array1.find(function(element) {\nreturn element > 10;\n});\n\nconsole.log(found);\n// expected output: 12\n"
-    }
+    },
+  {
+    "id": 11,
+    "title": "Object.assign()",
+    "body": "The Object.assign() method is used to copy the values of all enumerable own properties from one or more source objects to a target object. It will return the target object.",
+    "code": "const object1 = {\na: 1,\nb: 2,\nc: 3\n};\n\nconst object2 = Object.assign({c: 4, d: 5}, object1);\n\nconsole.log(object2.c, object2.d);\n// expected output: 3 5\n"
+    },
+  {
+    "id": 12,
+    "title": "Object.create()",
+    "body": "The Object.create() method creates a new object, using an existing object to provide the newly created object's __proto__ .",
+    "code": "const person = {\nisHuman: false,\nprintIntroduction: function () {\nconsole.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);\n}\n};\n\nconst me = Object.create(person);\n\nme.name = \"Matthew\";\n// \"name\" is a property set on \"me\", but not on \"person\"\nme.isHuman = true;\n// inherited properties can be overwritten\n\nme.printIntroduction();\n// expected output: \"My name is Matthew. Am I human? true\"\n"
+    },
+  {
+    "id": 13,
+    "title": "Object.seal()",
+    "body": "The Object.seal() method seals an object, preventing new properties from being added to it and marking all existing properties as non-configurable. Values of present properties can still be changed as long as they are writable.",
+    "code": "const object1 = {\nproperty1: 42\n};\n\nObject.seal(object1);\nobject1.property1 = 33;\nconsole.log(object1.property1);\n// expected output: 33\n\ndelete object1.property1;\n// cannot delete when sealed\n\nconsole.log(object1.property1);\n// expected output: 33\n"
+    },
+  {
+    "id": 14,
+    "title": "Object.prototype.valueOf()",
+    "body": "The valueOf() method returns the primitive value of the specified object.",
+    "code": "function MyNumberType(n) {\nthis.number = n;\n}\n\nMyNumberType.prototype.valueOf = function() {\nreturn this.number;\n};\n\nconst object1 = new MyNumberType(4);\n\nconsole.log(object1 + 3);\n// expected output: 7\n"
+    },
+  {
+    "id": 15,
+    "title": "Object.fromEntries()",
+    "body": "The Object.fromEntries() method transforms a list of key-value pairs into an object.",
+    "code": "const entries = new Map([\n['foo', 'bar'],\n['baz', 42]\n]);\n\nconst obj = Object.fromEntries(entries);\n\nconsole.log(obj);\n// expected output: Object { foo: \"bar\", baz: 42 }\n"}
 ]

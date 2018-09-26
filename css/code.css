@@ -157,15 +157,15 @@ a {
     color: #0974ff;
 }
 
-.while, .for, .if, .else, .elseif, .try, .catch, .break, .return {
+.while, .for, .if, .else, .elseif, .try, .catch, .break, .return, .delete, .false, .true {
   color: rgb(182, 0, 136)
 }
 
-.log, .map, .length, .alert, .apply, .eval {
+.log, .map, .length, .alert, .apply, .eval, .seal, .fromEntries, .every, .filter, .create, .valueOf, .from, .assign {
   color: #eeff00
 }
 
-.console {
+.console, .prototype {
   color: #00ccff
 }
 
@@ -173,4 +173,6 @@ a {
   color: green;
 }
 
-
+.this {
+  color: rgb(255, 0, 106);
+}
