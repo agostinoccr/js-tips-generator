@@ -12,4 +12,5 @@ Nothing special. It's a quite simple JS app...
 ## Authors
 
 * **Agostino Cecere**
+* Thanks to Ludem for his support! (https://github.com/ludem)
 
