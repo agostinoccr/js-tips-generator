@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Javascript Tips Generator by AgostinoCcr</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
@@ -99,7 +99,7 @@
         var randTip = tips[Math.floor(Math.random()*tips.length)];
 
         var titles = Array.from(document.querySelectorAll('.title'))
-            .map((titolo) => titolo.textContent = randTip.title);
+                        .map((titolo) => titolo.textContent = randTip.title);
 
         const innerHtml = randTip.code
             .split('\n')
