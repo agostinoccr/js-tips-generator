@@ -7,7 +7,7 @@ Nothing special. It's a quite simple JS app...
 
 ## Built On
 
-* Just some HTML, CSS and JS
+* Just some HTML, CSS and JS (not quite responsive yet!)
 
 ## Authors
 
